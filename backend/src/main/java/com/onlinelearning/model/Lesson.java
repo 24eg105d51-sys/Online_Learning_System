@@ -1,0 +1,3 @@
+package com.onlinelearning.model;
+import com.fasterxml.jackson.annotation.JsonIgnore; import jakarta.persistence.*;
+@Entity public class Lesson { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; private String title; @Column(length=5000) private String content; private int lessonOrder; @ManyToOne @JoinColumn(name="course_id") @JsonIgnore private Course course; public Lesson(){} public Lesson(String t,String c,int o,Course co){title=t;content=c;lessonOrder=o;course=co;} public Long getId(){return id;} public String getTitle(){return title;} public String getContent(){return content;} public int getLessonOrder(){return lessonOrder;} }
