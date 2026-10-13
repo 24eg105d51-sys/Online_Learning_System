@@ -64,7 +64,10 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource cors() {
         CorsConfiguration c = new CorsConfiguration();
-        c.setAllowedOrigins(List.of("http://localhost:5173"));
+        c.setAllowedOrigins(List.of(
+                "http://localhost:5173",
+                "https://online-learning-system-1q1v.onrender.com"
+        ));
         c.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         c.setAllowedHeaders(List.of("*"));
 
